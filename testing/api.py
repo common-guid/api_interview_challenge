@@ -21,7 +21,7 @@ def request_meal(name):
     meal = requests.request('GET', f'http://www.themealdb.com/api/json/v1/1/search.php?s={name}').text
     j = json.loads(meal)
     tbl = pd.json_normalize(j)
-    return 
+    return
 
 @app.route('/main_ingredient/<string:name>', methods=['GET'])
 def request_by_ingredient(name):
